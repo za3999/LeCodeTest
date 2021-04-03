@@ -24,14 +24,12 @@ import java.util.function.Consumer;
 public class ReconstructQueue {
 
     public static int[][] reconstructQueue(int[][] people) {
-        Arrays.sort(people, new Comparator<int[]>() {
-            @Override
-            public int compare(int[] o1, int[] o2) {
-                return o1[0] == o2[0] ? o1[1] - o2[1] : o2[0] - o1[0];
-            }
-        });
+        //从高到低排序,高度相同，按位置从小到大排序(从前往后)
+        Arrays.sort(people, (o1, o2) -> o1[0] == o2[0] ? o1[1] - o2[1] : o2[0] - o1[0]);
         List<int[]> list = new LinkedList<>();
         for (int[] p : people) {
+            //依次按照前面的人数插入
+            //因为是从高到低排序的，高的人会往后挤，但是新插入的低的人不会影响高的人前面的人数
             list.add(p[1], p);
         }
         return list.toArray(people);
