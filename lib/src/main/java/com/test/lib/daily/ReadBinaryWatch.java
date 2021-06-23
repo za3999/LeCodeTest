@@ -29,6 +29,8 @@ package com.test.lib.daily;
  * 输出：[]
  */
 
+import com.test.lib.Util;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -50,6 +52,10 @@ public class ReadBinaryWatch {
             }
         }
         return result;
+    }
+
+    public static void main(String[] args) {
+        Util.print(new ReadBinaryWatch().readBinaryWatch(2));
     }
 
 }

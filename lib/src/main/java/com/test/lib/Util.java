@@ -1,5 +1,7 @@
 package com.test.lib;
 
+import java.util.Collection;
+
 public class Util {
 
     public static void revert(int[] nums, int start, int end) {
@@ -36,4 +38,23 @@ public class Util {
         double res = 0 - log(2, 1d / 1000d);
         System.out.println(res);
     }
+
+    public static <T> void print(Collection<T> list) {
+        StringBuilder stringBuilder = new StringBuilder("result: [");
+        for (T result : list) {
+            stringBuilder.append(result + " ");
+        }
+        stringBuilder.append("]");
+        System.out.println(stringBuilder.toString());
+    }
+
+    public static <T> void print(T[] array) {
+        StringBuilder stringBuilder = new StringBuilder("result: [");
+        for (T result : array) {
+            stringBuilder.append(result + " ");
+        }
+        stringBuilder.append("]");
+        System.out.println(stringBuilder.toString());
+    }
+
 }
