@@ -57,4 +57,13 @@ public class Util {
         System.out.println(stringBuilder.toString());
     }
 
+    public static void print(boolean[] array) {
+        StringBuilder stringBuilder = new StringBuilder("result: [");
+        for (boolean result : array) {
+            stringBuilder.append(result + " ");
+        }
+        stringBuilder.append("]");
+        System.out.println(stringBuilder.toString());
+    }
+
 }
